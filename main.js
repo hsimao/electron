@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow, secondaryWindow
 
 // Create a new BrowserWindow when `app` is ready
 function createWindow() {
@@ -11,14 +11,35 @@ function createWindow() {
     width: 1000,
     height: 800,
     webPreferences: { nodeIntegration: true },
-    // 預設背景顏色
-    backgroundColor: '#2c92f9',
-    // show: false
+    backgroundColor: '#2c92f9'
   })
+
+  secondaryWindow = new BrowserWindow({
+    width: 400,
+    height: 200,
+    webPreferences: { nodeIntegration: true },
+    backgroundColor: '#2c92f9',
+    // 將 secondaryWindow 綁定 mainWindow, 當 mainWindow 移動時或關閉、也會連動 secondaryWindow
+    parent: mainWindow,
+    modal: true, // 將自己固定在 mainWindow 視窗內
+    show: false
+  })
+
+  // 3 秒後顯示 子視窗, 再過 3 秒後銷毀子視窗
+  setTimeout(() => {
+    secondaryWindow.show()
+    setTimeout(() => {
+      // secondaryWindow.hide() // 隱藏, 之後再顯示
+      // 直接將整個 secondaryWindow 關閉銷毀
+      secondaryWindow.close()
+      secondaryWindow = null
+    }, 3000)
+  },3000)
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadFile('index.html')
-  // mainWindow.loadFile('https://www.google.com/')
+  secondaryWindow.loadFile('secondary.html')
+
 
   // 監聽視窗
   // mainWindow.on('ready-to-show', mainWindow.show)
@@ -29,6 +50,10 @@ function createWindow() {
   // Listen for window being closed
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+
+  secondaryWindow.on('closed', () => {
+    secondaryWindow = null
   })
 }
 
