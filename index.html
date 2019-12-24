@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
     <title>Hello World!</title>
-    <style media="screen">
-      body {
-        background-color: #2c92f9;
-        height: 100%;
-      }
-    </style>
   </head>
-  <body>
+  <!-- 讓 window 雖然關閉工具列, 但還是可以點擊上方區塊進行拖移 -->
+  <body style="user-select: none; -webkit-app-region: drag;">
     <h1>Hello World!</h1>
+    <br>
+    <br>
+    <!-- fix 拖動 range input 螢幕也會跟著移動問題 -->
+    <input style="-webkit-app-region: no-drag;" type="range" name="range" min="0" max="10">
 
     <!-- All of the Node.js APIs are available in this renderer process. -->
     We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,

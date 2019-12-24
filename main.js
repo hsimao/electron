@@ -11,14 +11,15 @@ function createWindow() {
     width: 1000,
     height: 800,
     webPreferences: { nodeIntegration: true },
-    backgroundColor: '#2c92f9'
+    frame: false, // 關閉瀏覽器工具列
+    titleBarStyle: 'hidden' // 最上方工具條樣式, 搭配 frame: false, 時按鈕會顯示出來
   })
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadFile('index.html')
 
   // Open DevTools - Remove for PRODUCTION!
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Listen for window being closed
   mainWindow.on('closed', () => {
