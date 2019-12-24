@@ -16,7 +16,6 @@ function createWindow() {
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadFile('index.html')
-  secondaryWindow.loadFile('secondary.html')
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools()
