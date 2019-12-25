@@ -11,7 +11,7 @@ function createWindow() {
     width: 1000,
     height: 800,
     webPreferences: { nodeIntegration: true },
-    backgroundColor: '#2c92f9'
+    backgroundColor: '#2c92f9',
   })
 
   // Load index.html into the new BrowserWindow
@@ -27,18 +27,7 @@ function createWindow() {
 }
 
 // Electron `app` is ready
-app.on('ready', () => {
-  console.log('is Ready')
-
-  // 取得 desktop 路徑
-  console.log(app.getPath('desktop'))
-  console.log(app.getPath('music'))
-  console.log(app.getPath('temp'))
-  // 當前應用程式路徑
-  console.log(app.getPath('userData'))
-
-  createWindow()
-})
+app.on('ready', createWindow)
 
 // Quit when all windows are closed - (Not macOS - Darwin)
 app.on('window-all-closed', () => {
@@ -48,16 +37,6 @@ app.on('window-all-closed', () => {
 // 關閉應用程式事件監聽
 app.on('before-quit', e => {
   console.log('before-quit')
-})
-
-// 應用程式 blur
-app.on('browser-window-blur', e => {
-  console.log('App 取消焦點')
-})
-
-// 應用程式 focus
-app.on('browser-window-focus', e => {
-  console.log('App focus')
 })
 
 // When app icon is clicked and app is running, (macOS) recreate the BrowserWindow
