@@ -1,5 +1,6 @@
 // Modules
 const { app, BrowserWindow } = require('electron')
+const windowStateKeeper = require('electron-window-state')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -7,15 +8,26 @@ let mainWindow
 
 // Create a new BrowserWindow when `app` is ready
 function createWindow() {
+  // 管理 window 狀態
+  let winState = windowStateKeeper({
+    defaultWidth: 1000,
+    defaultHeight: 800,
+  })
+
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 800,
+    width: winState.width,
+    height: winState.height,
+    x: winState.x,
+    y: winState.y,
     webPreferences: { nodeIntegration: true },
     backgroundColor: '#2c92f9',
   })
 
   // Load index.html into the new BrowserWindow
   mainWindow.loadFile('index.html')
+
+  // 綁定 mainWindow, 每次縮放玩視窗後關閉在開啟, 會保持上次關閉位置跟大小
+  winState.manage(mainWindow)
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools()
