@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -13,10 +13,22 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    <img src="https://placekitten.com/500/500" alt="" />
+    <a target="_blank" href="https://placekitten.com/500/500"><h3>Kitten</h3></a>
 
+    <video src="./mgm.mp4" controls width="650"></video>
     <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    We are using Node.js
+    <strong
+      ><script>
+        document.write(process.versions.node)
+      </script></strong
+    >, and Electron
+    <strong
+      ><script>
+        document.write(process.versions.electron)
+      </script></strong
+    >.
 
     <script>
       // You can also require other files to run in this process
