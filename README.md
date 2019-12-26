@@ -25,3 +25,7 @@ https://github.com/hsimao/electron/tree/webContents
 ## webContents.session API
 
 https://github.com/hsimao/electron/tree/session
+
+## webContents.session.cookie API
+
+https://github.com/hsimao/electron/tree/session-cookie
