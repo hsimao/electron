@@ -33,3 +33,7 @@ https://github.com/hsimao/electron/tree/session-cookie
 ## downloadItem 下載事件
 
 https://github.com/hsimao/electron/tree/download-item
+
+## Dialog 彈窗 API
+
+https://github.com/hsimao/electron/tree/dialog
