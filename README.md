@@ -1,55 +1,37 @@
-## 父、子層視窗
-
-https://github.com/hsimao/electron/tree/parent-child-window
-
-## 無導覽列樣式
-
-https://github.com/hsimao/electron/tree/frameless-window
-
-## Electron - IPC 通訊機制
+## 一、Electron - IPC 通訊機制
 
 https://github.com/hsimao/electron/tree/ipc
 
-## Electron - Browser window 屬性、方法 API
+---
 
-https://github.com/hsimao/electron/tree/browser-properties-methods
+## 二、主進程 API Main Process API
 
-## electron-window-state 保持上次關閉前的視窗大小與位置
+### [2.1：父、子層視窗](https://github.com/hsimao/electron/tree/parent-child-window)
 
-https://github.com/hsimao/electron/tree/window-state
+### [2.2：無導覽列樣式](https://github.com/hsimao/electron/tree/frameless-window)
 
-## webContents API
+### [2.3：Electron - Browser window 屬性、方法 API](https://github.com/hsimao/electron/tree/browser-properties-methods)
 
-https://github.com/hsimao/electron/tree/webContents
+### [2.4：electron-window-state 保持上次關閉前的視窗大小與位置](https://github.com/hsimao/electron/tree/window-state)
 
-## webContents.session API
+### [2.5：webContents API](https://github.com/hsimao/electron/tree/webContents)
 
-https://github.com/hsimao/electron/tree/session
+### [2.6：webContents.session API](https://github.com/hsimao/electron/tree/session)
 
-## webContents.session.cookie API
+### [2.7：webContents.session.cookie API](https://github.com/hsimao/electron/tree/session-cookie)
 
-https://github.com/hsimao/electron/tree/session-cookie
+### [2.8：downloadItem 下載事件](https://github.com/hsimao/electron/tree/download-item)
 
-## downloadItem 下載事件
+### [2.9：Dialog 彈窗 API](https://github.com/hsimao/electron/tree/dialog)
 
-https://github.com/hsimao/electron/tree/download-item
+### [2.10：全局鍵盤事件監聽、組合快捷鍵 globalShortcut API](https://github.com/hsimao/electron/tree/globalShortcut-accelerator)
 
-## Dialog 彈窗 API
+### [2.11：Menu 選單設置](https://github.com/hsimao/electron/tree/menu-menuItem)
 
-https://github.com/hsimao/electron/tree/dialog
+### [2.12：Tray 托盤設置](https://github.com/hsimao/electron/tree/tray)
 
-## 全局鍵盤事件監聽、組合快捷鍵 globalShortcut API
+### [2.13：powerMonitor 電源監控 API](https://github.com/hsimao/electron/tree/powerMonitor)
 
-https://github.com/hsimao/electron/tree/globalShortcut-accelerator
+---
 
-## Menu 選單設置
-
-https://github.com/hsimao/electron/tree/menu-menuItem
-
-## Tray 托盤設置
-
-https://github.com/hsimao/electron/tree/tray
-
-## powerMonitor 電源監控 API
-
-https://github.com/hsimao/electron/tree/powerMonitor
+## 三、瀏覽器 API Renderer Process API
