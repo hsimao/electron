@@ -45,3 +45,7 @@ https://github.com/hsimao/electron/tree/globalShortcut-accelerator
 ## Menu 選單設置
 
 https://github.com/hsimao/electron/tree/menu-menuItem
+
+## Tray 托盤設置
+
+https://github.com/hsimao/electron/tree/tray
