@@ -37,3 +37,7 @@ https://github.com/hsimao/electron/tree/download-item
 ## Dialog 彈窗 API
 
 https://github.com/hsimao/electron/tree/dialog
+
+## 全局鍵盤事件監聽、組合快捷鍵 globalShortcut API
+
+https://github.com/hsimao/electron/tree/globalShortcut-accelerator
