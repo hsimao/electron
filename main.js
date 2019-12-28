@@ -1,5 +1,6 @@
 // Modules
-const { app, BrowserWindow } = require('electron')
+const electron = require('electron')
+const { app, BrowserWindow } = electron
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -23,6 +24,19 @@ function createWindow() {
   // Listen for window being closed
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+
+  // 監聽電源： 在系統復原時發出
+  // 電腦進入睡眠狀態後，在喚醒時將會觸發
+  electron.powerMonitor.on('resume', e => {
+    // 如果喚醒時當下應用程式視窗是被關閉的，就重新打開
+    // 這邊的「關閉」是視窗，不是關閉應用程式
+    if (!mainWindow) createWindow()
+  })
+
+  // 電腦進入睡眠狀態後，在喚醒時將會觸發
+  electron.powerMonitor.on('suspend', e => {
+    console.log('Saving some data')
   })
 }
 
