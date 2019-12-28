@@ -1,6 +1,9 @@
 // Modules
 const { app, BrowserWindow } = require('electron')
 
+// 設置全域變數, 讓瀏覽器端可透過 remote.getGlobal('myglob') 取得
+global['myglob'] = 'A var set in main.'
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
