@@ -49,3 +49,7 @@ https://github.com/hsimao/electron/tree/menu-menuItem
 ## Tray 托盤設置
 
 https://github.com/hsimao/electron/tree/tray
+
+## powerMonitor 電源監控 API
+
+https://github.com/hsimao/electron/tree/powerMonitor
