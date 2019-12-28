@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
-    <style media="screen">
-      body {
-        background-color: #2c92f9;
-        height: 100%;
-      }
-    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
-
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
+    <h2>
+      <a
+        href="https://images.unsplash.com/photo-1577462282244-b58c2816d686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80"
+        download
+        >Download Image</a
+      >
+    </h2>
+    <progress value="0" max="100" id="progress"></progress>
   </body>
+  <script>
+    window.progress = document.getElementById('progress')
+  </script>
 </html>
