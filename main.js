@@ -1,12 +1,37 @@
 // Modules
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Tray, Menu } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow, tray
+
+let trayMenu = Menu.buildFromTemplate([{ label: 'Item 1' }, { label: '退出', role: 'quit' }])
+
+// 創建托盤
+function createTray() {
+  tray = new Tray('trayTemplate@2x.png')
+  // hover 在托盤圖示上會顯示的訊息
+  tray.setToolTip('Tray detail')
+
+  // 監聽托盤事件, 當設置了托盤 menu 之後, 這裡的監聽事件將被覆蓋失效
+  tray.on('click', e => {
+    // 如果點擊托盤當下有按著 shift 鍵盤, 將關閉應用程式
+    if (e.shiftKey) {
+      app.quit()
+    } else {
+      // 判斷當前應用程式是否顯示, 依據狀態顯示或關閉程式畫面
+      mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+    }
+  })
+
+  // 設置托盤 menu
+  tray.setContextMenu(trayMenu)
+}
 
 // Create a new BrowserWindow when `app` is ready
 function createWindow() {
+  createTray()
+
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
