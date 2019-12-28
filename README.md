@@ -41,3 +41,7 @@ https://github.com/hsimao/electron/tree/dialog
 ## 全局鍵盤事件監聽、組合快捷鍵 globalShortcut API
 
 https://github.com/hsimao/electron/tree/globalShortcut-accelerator
+
+## Menu 選單設置
+
+https://github.com/hsimao/electron/tree/menu-menuItem
