@@ -1,5 +1,5 @@
 // Modules
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, globalShortcut } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -19,6 +19,24 @@ function createWindow() {
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools()
+
+  // 監聽鍵盤 G 按鈕點擊
+  globalShortcut.register('P', () => {
+    console.log('您點擊了 P')
+  })
+
+  // 監聽組合鍵盤 Connand + G 或 Control + G 按鈕點擊事件
+  globalShortcut.register('CommandOrControl + M', () => {
+    console.log('您點擊了 Command or Control + M')
+  })
+
+  // 監聽組合鍵盤 Shift + J 按鈕點擊事件
+  globalShortcut.register('Shift + J', () => {
+    console.log('您點擊了  Shift + J')
+
+    // 將 P 監聽取消
+    globalShortcut.unregister('P')
+  })
 
   // Listen for window being closed
   mainWindow.on('closed', () => {
