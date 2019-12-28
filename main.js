@@ -57,6 +57,12 @@ function createWindow() {
   // 註冊選單
   Menu.setApplicationMenu(mainMenu)
 
+  // 監聽右鍵事件
+  mainWindow.webContents.on('context-menu', e => {
+    // 後在鼠標位置顯示 menu
+    mainMenu.popup()
+  })
+
   // Listen for window being closed
   mainWindow.on('closed', () => {
     mainWindow = null
