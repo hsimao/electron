@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
-    <style media="screen">
-      body {
-        background-color: #2c92f9;
-        height: 100%;
-      }
-    </style>
   </head>
   <body>
     <h1>Hello World!</h1>
 
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <img src="https://placekitten.com/450/300" alt="" /><br />
+
+    <button onclick="zoomUp()">放大</button><br />
+    <button onclick="zoomDown()">縮小</button><br />
+    <button onclick="zoomReset()">重置</button><br />
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      const { webFrame } = require('electron')
+
+      // 當前視窗放大
+      const zoomUp = () => {
+        webFrame.setZoomLevel(webFrame.getZoomLevel() + 1)
+      }
+
+      // 當前視窗縮小
+      const zoomDown = () => {
+        webFrame.setZoomLevel(webFrame.getZoomLevel() - 1)
+      }
+
+      // 當前視窗重置
+      const zoomReset = () => {
+        webFrame.setZoomLevel(1)
+      }
+
+      console.log(webFrame.getResourceUsage())
     </script>
   </body>
 </html>
