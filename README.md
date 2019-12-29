@@ -41,3 +41,5 @@ https://github.com/hsimao/electron/tree/ipc
 ### [3.2：控制另開視窗的方法 browserWindowProxy](https://github.com/hsimao/electron/tree/browserWindowProxy)
 
 ### [3.3：WebFrame](https://github.com/hsimao/electron/tree/WebFrame)
+
+### [3.4：取得桌面螢幕 or 瀏覽器相關媒體資源 desktopCapturer API](https://github.com/hsimao/electron/tree/desktopCapturer)
