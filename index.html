@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
-    <style media="screen">
-      body {
-        background-color: #2c92f9;
-        height: 100%;
-      }
-    </style>
   </head>
   <body>
     <h1>Hello World!</h1>
 
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <img width="100%" src="" id="screenshot" /><br />
+    <button id="screenshot-button">取得當前視窗截圖</button>
 
     <script>
       // You can also require other files to run in this process
