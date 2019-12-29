@@ -37,3 +37,5 @@ https://github.com/hsimao/electron/tree/ipc
 ## 三、瀏覽器 API Renderer Process API
 
 ### [3.1：瀏覽器端調用主進程模塊與資訊, 透過 Remote API ](https://github.com/hsimao/electron/tree/Penderer-remote)
+
+### [3.2：控制另開視窗的方法 browserWindowProxy](https://github.com/hsimao/electron/tree/browserWindowProxy)
