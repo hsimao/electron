@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -13,14 +13,36 @@
   </head>
   <body>
     <h1>Hello World!</h1>
-
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <h3><a href="https://electronjs.org" target="_blank">直接打開 無法控制 New Window</a></h3>
+    <h3><a href="#" onclick="newWin()">使用 window.open 打開並儲存, 以便後續控制</a></h3>
+    <h3><a href="#" onclick="newWinAndOption()">使用 window.open 打開並自訂配置</a></h3>
+    <button onclick="closeWin()">關閉另開的新視窗</button>
+    <button onclick="updateNewWindowBgColor()">更新新視窗的字體</button>
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      let win
+
+      // 將打開的視窗儲存到 win 變數, 以便後續控制
+      const newWin = () => {
+        win = window.open('https://electronjs.org')
+      }
+
+      // 另開新視窗, 並自訂設定
+      // 第三個參數可以使用以下 BrowserWindow API
+      // https://electronjs.org/docs/api/browser-window#new-browserwindowoptions
+      const newWinAndOption = () => {
+        // 另開視窗寬高設置為 300px, 且層級一直固定在最上方
+        win = window.open('https://electronjs.org', '_blank', 'width=300, height=300, alwaysOnTop=1')
+      }
+
+      const closeWin = () => {
+        win.close()
+      }
+
+      // 更新另開新視窗的字體
+      const updateNewWindowBgColor = () => {
+        win.eval("document.getElementsByTagName('body')[0].style.fontFamily = 'Comic Sans MS'")
+      }
     </script>
   </body>
 </html>
