@@ -55,3 +55,5 @@ https://github.com/hsimao/electron/tree/ipc
 ### [4.3：shell](https://github.com/hsimao/electron/tree/shell)
 
 ### [4.4：NativeImage](https://github.com/hsimao/electron/tree/NativeImage)
+
+### [4.5：clipboard](https://github.com/hsimao/electron/tree/clipboard)
