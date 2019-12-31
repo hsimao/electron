@@ -5,6 +5,8 @@ const { app, BrowserWindow } = require('electron')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+console.log(process.type)
+
 // Create a new BrowserWindow when `app` is ready
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -19,6 +21,9 @@ function createWindow() {
 
   // Open DevTools - Remove for PRODUCTION!
   mainWindow.webContents.openDevTools()
+
+  // 監聽瀏覽器崩潰事件, 一崩潰就重新刷新頁面
+  mainWindow.webContents.on('crashed', mainWindow.reload)
 
   // Listen for window being closed
   mainWindow.on('closed', () => {
