@@ -69,3 +69,5 @@ https://github.com/hsimao/electron/tree/ipc
 ### [5.3：通知功能 Notification](https://github.com/hsimao/electron/tree/Notifications)
 
 ### [5.4：安全性-透過 Preload 檔案只導出需要的資料或方法到瀏覽器端](https://github.com/hsimao/electron/tree/preload)
+
+### [5.5：進度條 Progress](https://github.com/hsimao/electron/tree/progress)
