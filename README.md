@@ -57,3 +57,9 @@ https://github.com/hsimao/electron/tree/ipc
 ### [4.4：NativeImage](https://github.com/hsimao/electron/tree/NativeImage)
 
 ### [4.5：clipboard](https://github.com/hsimao/electron/tree/clipboard)
+
+---
+
+## 五、其他功能
+
+### [5.1：Offscreen Rendering](https://github.com/hsimao/electron/tree/offscreen-rendering)
