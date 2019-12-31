@@ -53,3 +53,5 @@ https://github.com/hsimao/electron/tree/ipc
 ### [4.2：screen](https://github.com/hsimao/electron/tree/screen)
 
 ### [4.3：shell](https://github.com/hsimao/electron/tree/shell)
+
+### [4.4：NativeImage](https://github.com/hsimao/electron/tree/NativeImage)
