@@ -66,4 +66,6 @@ https://github.com/hsimao/electron/tree/ipc
 
 ### [5.2：網路連線狀態監測功能](https://github.com/hsimao/electron/tree/network)
 
-### [5.3 通知功能 Notification](https://github.com/hsimao/electron/tree/Notifications)
+### [5.3：通知功能 Notification](https://github.com/hsimao/electron/tree/Notifications)
+
+### [5.4：安全性-透過 Preload 檔案只導出需要的資料或方法到瀏覽器端](https://github.com/hsimao/electron/tree/preload)
