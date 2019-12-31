@@ -49,3 +49,5 @@ https://github.com/hsimao/electron/tree/ipc
 ## 四、共享 Shared API
 
 ### [4.1：process](https://github.com/hsimao/electron/tree/process)
+
+### [4.2：screen](https://github.com/hsimao/electron/tree/screen)
