@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -14,13 +14,28 @@
   <body>
     <h1>Hello World!</h1>
 
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <button onclick="makeUpper()">將複製的文字轉成大寫</button><br />
+    <button onclick="showImage()">顯示當前複製的圖片</button><br />
+    <img src="" id="copyImage" />
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      const { clipboard } = require('electron')
+
+      // 印出當前複製文字
+      console.log('clipboard', clipboard.readText())
+
+      // 將複製的文字轉成大寫
+      const makeUpper = () => {
+        let copyText = clipboard.readText()
+
+        clipboard.writeText(copyText.toUpperCase())
+      }
+
+      // 將當前複製的圖片顯示到畫面上
+      const showImage = () => {
+        const image = clipboard.readImage()
+        document.getElementById('copyImage').src = image.toDataURL(image)
+      }
     </script>
   </body>
 </html>
