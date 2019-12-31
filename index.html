@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -12,15 +12,28 @@
     </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <h1>當前是： <u id="status"></u></h1>
 
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+
+      const updateState = status => {
+        const statusNode = document.getElementById('status')
+        statusNode.innerText = status ? 'online' : 'offline'
+      }
+      // 使用 html5 API 判斷當前是否在線
+      // 初使用
+      updateState(navigator.onLine)
+
+      // 監聽連線狀態
+      window.addEventListener('online', e => {
+        updateState(true)
+      })
+
+      window.addEventListener('offline', e => {
+        updateState(false)
+      })
     </script>
   </body>
 </html>
