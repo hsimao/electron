@@ -63,3 +63,5 @@ https://github.com/hsimao/electron/tree/ipc
 ## 五、其他功能
 
 ### [5.1：Offscreen Rendering](https://github.com/hsimao/electron/tree/offscreen-rendering)
+
+### [5.2：網路連線狀態監測功能](https://github.com/hsimao/electron/tree/network)
