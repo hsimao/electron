@@ -51,3 +51,5 @@ https://github.com/hsimao/electron/tree/ipc
 ### [4.1：process](https://github.com/hsimao/electron/tree/process)
 
 ### [4.2：screen](https://github.com/hsimao/electron/tree/screen)
+
+### [4.3：shell](https://github.com/hsimao/electron/tree/shell)
