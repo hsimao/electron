@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -14,13 +14,51 @@
   <body>
     <h1>Hello World!</h1>
 
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    <button onclick="toPng()">Copy photo to PNG</button>
+    <button onclick="toJpg()">Copy photo to JPG</button>
+    <button onclick="toTag()">Show</button>
+
+    <br /><img src="" id="preview" />
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      const fs = require('fs')
+      const { nativeImage, remote } = require('electron')
+
+      const photo = nativeImage.createFromPath(`${__dirname}/splash.png`)
+
+      console.log(photo.getSize())
+
+      // 儲存圖片到桌面
+      const saveToDesktop = (data, ext) => {
+        // 取得桌面路徑
+        let desktopPath = remote.app.getPath('desktop')
+        fs.writeFile(`${desktopPath}/photo.${ext}`, data, console.log)
+      }
+
+      // 將圖片轉換成 base64 格式, 並縮小 4分之1 後顯示
+      const toTag = e => {
+        let size = photo.getSize()
+
+        let photoURL = photo
+          .resize({
+            width: size.width / 4,
+            height: size.height / 4,
+          })
+          .toDataURL()
+        document.getElementById('preview').src = photoURL
+      }
+
+      // 將圖片轉換成 PNG 檔案
+      const toPng = e => {
+        let pngPhoto = photo.toPNG()
+        saveToDesktop(pngPhoto, 'png')
+      }
+
+      // 將圖片轉換成 JPG 檔案
+      const toJpg = e => {
+        let jpgPhoto = photo.toJPEG(100)
+        saveToDesktop(jpgPhoto, 'jpg')
+      }
     </script>
   </body>
 </html>
