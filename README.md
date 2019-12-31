@@ -43,3 +43,9 @@ https://github.com/hsimao/electron/tree/ipc
 ### [3.3：WebFrame](https://github.com/hsimao/electron/tree/WebFrame)
 
 ### [3.4：取得桌面螢幕 or 瀏覽器相關媒體資源 desktopCapturer API](https://github.com/hsimao/electron/tree/desktopCapturer)
+
+---
+
+## 四、共享 Shared API
+
+### [4.1：process](https://github.com/hsimao/electron/tree/process)
