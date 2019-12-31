@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
     <title>Hello World!</title>
     <style media="screen">
       body {
@@ -15,12 +15,27 @@
     <h1>Hello World!</h1>
 
     <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <strong><script>document.write( process.versions.node)</script></strong>,
-    and Electron <strong><script>document.write( process.versions.electron )</script></strong>.
+    We are using Node.js
+    <strong>
+      <script>
+        document.write(versions.node)
+      </script> </strong
+    >, and Electron
+    <strong
+      ><script>
+        document.write(versions.electron)
+      </script></strong
+    >.<br />
+
+    <textarea id="content" cols="30" rows="10"></textarea><br />
+    <button id="save" onclick="saveText()">Save Content</button>
 
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+      // 將文字儲存成 txt 檔案在桌面上
+      const saveText = () => {
+        const text = document.getElementById('content').value
+        writeToFile(text)
+      }
     </script>
   </body>
 </html>

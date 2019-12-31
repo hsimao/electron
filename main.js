@@ -10,8 +10,13 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
-    webPreferences: { nodeIntegration: true },
-    backgroundColor: '#2c92f9',
+    webPreferences: {
+      // 安全設置, 不將所有主進程 api 整合到瀏覽器端
+      nodeIntegration: false,
+      contextIsolation: false,
+      // 將瀏覽器端所需的資料、方法只透過 preload.js 轉存到 window 上取得
+      preload: __dirname + '/preload.js',
+    },
   })
 
   // Load index.html into the new BrowserWindow
